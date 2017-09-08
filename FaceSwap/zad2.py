@@ -19,7 +19,7 @@ print "Press R to start recording to a video file"
 
 #loading the keypoint detection model, the image and the 3D model
 predictor_path = "../shape_predictor_68_face_landmarks.dat"
-image_name = "../data/jolie.jpg"
+image_name = "zao.png"
 #the smaller this value gets the faster the detection will work
 #if it is too small, the user's face might not be detected
 maxImageSizeForDetection = 320
@@ -81,7 +81,7 @@ while True:
     if key == ord('r'):
         if writer is None:
             print "Starting video writer"
-            writer = cv2.VideoWriter("../out.avi", cv2.cv.CV_FOURCC('X', 'V', 'I', 'D'), 25, (cameraImg.shape[1], cameraImg.shape[0]))
+            writer = cv2.VideoWriter("../out.mp4", cv2.cv.CV_FOURCC('X', 'V', 'I', 'D'), 12, (cameraImg.shape[1], cameraImg.shape[0]))
 
             if writer.isOpened():
                 print "Writer succesfully opened"
